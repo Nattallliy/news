@@ -101,11 +101,17 @@ html, body {
     /*внутри nav-list теги должны распологаться в ряд*/
 .nav-list {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
     align-items: center;
     column-gap: 40px;
     font-size: 16px; /*размер букв навигации*/
     font-weight: 500; /*начертание медиум*/
     font-family: 'Poppins', sans-serif; /*шрифт*/
+}
+
+.nav-button{
+    display: none;
 }
 
     /*внутри nav-list__link работа с ссылками*/
@@ -147,32 +153,35 @@ html, body {
 
     display: flex;
     justify-content: space-between; /*выровнять по горизонтали */
+    
     align-items: center; /*выровнять по вертикали */
 
     background-color: var(--green-bg);
-    background-image: url('./../img/header-bg/абстракция.png');
+    background-image: url('./../img/header-bg/аб.png');
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center right; /*центрируем абстракцию по вертикали и горизонтали*/
 
 
 
-    color: var(--header-text);
+   color: var(--header-text);
     text-align: center; /*выровнять текст по центру */
 }
 
 .header__wrapper {
     padding: 0 15px; /*отступы от навигации слева справа*/
-    min-width: 660px; /*ограничить по ширине текст*/
-
+    max-width: 660px; /*ограничить по ширине текст*/
+    column-gap: 30px;
+    
 }
 
 .header__title {
     margin-bottom: 20px; /*отступы от загаловка*/
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.4;
     color: var(--orange-Ak);
+    text-align: center;
 }
 
 .header__text {
@@ -180,19 +189,17 @@ html, body {
     font-size: 23px;
     max-width: 650px;
     line-height: 1.333;
+    color: var(--white);
+    text-align: center;
 
-}
-
-/*отступ если абзацев больше одного*/
-.header__text p + p {
-    margin-bottom: 0.5em; 
 }
 
 
 .header-img {
-    position: absolute;
-    transform: translate(790px, -400px);  /*расположение картинки*/
-}
+
+
+ }/*расположение картинки*/
+
 
 .btn {
     display: inline-block;
@@ -235,9 +242,11 @@ html, body {
 
 .projects {
     display: inline;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 30px;
     row-gap: 0;
+    
 
    
 }
@@ -319,4 +328,56 @@ html, body {
     color: var(--orange-Ak);
     font-size: 30px;
 
+}
+
+@media (max-width: 1220px){
+    .nav-list{
+        display: none;
+    }
+
+    .nav-button{
+        display: block;
+    }
+
+    .header{
+        min-height: unset;
+    }
+
+    .header__title{
+        font-size: 30px;
+    }
+    .header__title strong {
+        font-size: 40px;
+    }
+
+    .section {
+        padding: 40px;
+    }
+    .section_1 {
+        padding: 40px;
+    }
+
+    .title-1 {
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+
+    .project_title{
+        font-size: 22px;
+    }
+
+    .footer {
+        padding: 40px 0 30px;
+    }
+    .footer_wrapper{
+        row-gap: 20px;
+    }
+
+    .social{
+        column-gap: 20px;
+    }
+
+    .social-item{
+      width: 28px;  
+    }
 }
